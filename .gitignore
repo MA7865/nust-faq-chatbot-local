@@ -1,18 +1,5 @@
-# Python
-__pycache__/
-*.py[cod]
+# Virtual environment
+venv/
 
-# Auto-generated dictionary (rebuilt on first run)
-data/dictionary.txt
-
-# OS
-.DS_Store
-Thumbs.db
-
-# IDE
-.vscode/
-.idea/
-*.swp
-
-# Logs
-*.log
+# Large models
+models/*.gguf
