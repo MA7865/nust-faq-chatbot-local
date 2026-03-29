@@ -1,0 +1,37 @@
+[
+  {
+    "intent": "greeting",
+    "inputs": ["hi", "hello", "hey", "hi there", "hello there", "hey there"],
+    "response": "Hello 👋 I am NUST FAQ Chatbot. Ask me anything about admissions, fees, MBBS, or university policies."
+  },
+  {
+    "intent": "capability",
+    "inputs": ["what can you do", "help", "what are you", "how can you help me"],
+    "response": "I can answer ONLY NUST FAQ-based questions such as admissions, MBBS, fees, quotas, scholarships, and university policies."
+  },
+  {
+    "intent": "identity",
+    "inputs": ["who are you", "are you a bot", "are you human", "what is your name"],
+    "response": "I am the NUST FAQ Chatbot 🤖 designed to help you find official answers about admissions and university policies."
+  },
+  {
+    "intent": "politeness",
+    "inputs": ["thanks", "thank you", "thx", "appreciate it", "great thanks"],
+    "response": "You're welcome 😊 Feel free to ask anything else about NUST."
+  },
+  {
+    "intent": "confusion",
+    "inputs": ["ok", "okay", "hmm", "huh", "oh"],
+    "response": "If you have a question about admissions, fees, MBBS, or scholarships, I’m here to help 👍"
+  },
+  {
+    "intent": "farewell",
+    "inputs": ["bye", "goodbye", "see you", "see ya", "exit"],
+    "response": "Goodbye 👋 Good luck with your NUST application!"
+  },
+  {
+    "intent": "capabilities_limit",
+    "inputs": ["can i trust you", "are you accurate", "is this official"],
+    "response": "I only use official NUST FAQ data, so my answers are based strictly on provided information."
+  }
+]
