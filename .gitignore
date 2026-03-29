@@ -1,5 +1,12 @@
-# Virtual environment
+# virtual environment
 venv/
+__pycache__/
+*.pyc
 
-# Large models
-models/*.gguf
+# model files
+models/
+*.gguf
+
+# OS junk
+.DS_Store
+Thumbs.db

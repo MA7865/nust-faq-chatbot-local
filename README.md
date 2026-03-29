@@ -34,45 +34,42 @@ nust-faq-chatbot-local/
 │   ├── faqs.json           ← 73 official NUST FAQs
 │   └── smalltalk.json      ← Greeting / meta responses
 ├── models/
-│   └── qwen.gguf           ← Quantized LLM (tracked via Git LFS)
+│   └── qwen.gguf           ← Quantized LLM (download from releases)
 ├── src/
 │   ├── chatbot.py          ← RAG pipeline + LLM call
 │   ├── embed_and_search.py ← FAISS index + semantic search
 │   └── spell_corrector.py  ← SymSpell spell correction
-└── venv/                   ← Pre-built virtual environment (Windows)
 ```
 
 ---
 
 ## Running the chatbot
 
-### Option A — Use the included venv (Windows, fastest)
+### Prerequisites
+- Download the Qwen model from [GitHub Releases](https://github.com/MA7865/nust-faq-chatbot-local/releases) and place it in `models/qwen.gguf`.
+
+### Option A — One-Click Setup (Windows)
 
 ```powershell
-# Activate the venv
-venv\Scripts\activate
+# Run the setup script (creates venv and installs dependencies)
+setup.bat
 
 # Start the server (browser opens automatically)
 python app.py
 ```
 
-### Option B — Fresh install
-
-```powershell
-# Windows one-click setup
-setup.bat
-
-# Then start
-python app.py
-```
-
-### Option C — Manual
+### Option B — Manual Setup
 
 ```bash
+# Create virtual environment
 python -m venv venv
 venv\Scripts\activate          # Windows
 # source venv/bin/activate     # Linux / Mac
+
+# Install dependencies
 pip install -r requirements.txt
+
+# Start the server
 python app.py
 ```
 
@@ -103,11 +100,8 @@ Press `Ctrl+C` to stop the server.
 
 ---
 
-## Model
-
-The Qwen GGUF model is stored in `models/qwen.gguf` and tracked via **Git LFS**.
-
-If the model file is missing after cloning, run:
+## Model Download
+The Qwen model is too large for direct Git storage. Download it from [GitHub Releases](https://github.com/MA7865/nust-faq-chatbot-local/releases) and place it in `models/qwen.gguf`.
 
 ```bash
 git lfs install
