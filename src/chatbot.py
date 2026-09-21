@@ -1,4 +1,5 @@
 from llama_cpp import Llama
+import os
 import re
 from embed_and_search import search
 from spell_corrector import correct_text
@@ -8,11 +9,45 @@ with open("data/smalltalk.json", "r", encoding="utf-8") as f:
     SMALLTALK_DATA = json.load(f)
 
 # Load Qwen model
-llm = Llama(
+# -------------------------
+# LOAD QWEN MODEL
+# -------------------------
+
+LOCAL_MODEL_PATH = "models/qwen.gguf"
+
+if os.path.exists(LOCAL_MODEL_PATH):
+    # Local development: use the model stored in models/
+    print("Loading local Qwen model...")
+    
+    llm = Llama(
+        model_path=LOCAL_MODEL_PATH,
+        n_ctx=2048,
+        n_threads=6
+    )
+
+else:
+    # Vercel/deployment: download Qwen from Hugging Face
+    from huggingface_hub import hf_hub_download
+
+    print("Local Qwen model not found.")
+    print("Downloading Qwen from Hugging Face...")
+
+    model_path = hf_hub_download(
+        repo_id="MA7865/nust-faq-chatbot-qwen",
+        filename="qwen.gguf",
+        token=os.environ.get("HF_TOKEN")
+    )
+
+    llm = Llama(
+        model_path=model_path,
+        n_ctx=2048,
+        n_threads=6
+    )
+'''llm = Llama(
     model_path="models/qwen.gguf",
     n_ctx=2048,
     n_threads=6
-)
+)'''
 
 # -------------------------
 # CONFIG
