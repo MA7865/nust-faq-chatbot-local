@@ -47,12 +47,16 @@ nust-faq-chatbot-local/
 
 ### Prerequisites
 - Download the Qwen model from [GitHub Releases](https://github.com/MA7865/nust-faq-chatbot-local/releases) and place it in `models/qwen.gguf`.
-
+- create a models folder in nust-faq-chatbot-local folder and move the qwen.gguf file in it
 ### Option A — One-Click Setup (Windows)
 
 ```powershell
 # Run the setup script (creates venv and installs dependencies)
 setup.bat
+
+# Activate virtual environment
+venv\Scripts\activate          # Windows
+# source venv/bin/activate     # Linux / Mac
 
 # Start the server (browser opens automatically)
 python app.py
