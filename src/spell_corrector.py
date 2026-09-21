@@ -150,3 +150,16 @@ def correct_text(text):
 
 # Initialize ON IMPORT
 load_dictionary()
+'''
+# test
+if __name__ == "__main__":
+    tests = [
+        "admissin critria",
+        "scholaship avaiable",
+        "fee strcutre for mbbs",
+        "aply for bshnd"
+    ]
+    for t in tests:
+        print(f"IN : {t}")
+        print(f"OUT: {correct_text(t)}\n")
+'''

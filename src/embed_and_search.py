@@ -52,7 +52,8 @@ def search(query, k=5, threshold=1.2):
 if __name__ == "__main__":
     print("This file is only a module. Run chatbot.py instead.")
 # ---- CLI TEST LOOP ----
-'''while True:
+'''
+while True:
     user_query = input("\nAsk a question (or 'exit'): ")
     if user_query.lower() == "exit":
         break
@@ -66,4 +67,17 @@ if __name__ == "__main__":
     print("\nTop Matches:")
     for r in results:
         print(f"- {r['faq']['question']} (score: {r['score']:.4f})")
-        '''
+'''   
+'''
+if __name__ == "__main__":
+    queries = [
+        "what is the fee for mbbs",
+        "how to apply with olevel",
+        "is there a hostel facility"
+    ]
+    for q in queries:
+        results = search(q)
+        print(f"\nQuery: {q}")
+        for r in results:
+            print(f"  [{r['score']:.3f}]  {r['faq']['question']}")
+'''
